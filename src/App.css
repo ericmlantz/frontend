@@ -1,38 +1,190 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;500&display=swap');
+
+html,body {
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-family: 'Dosis', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.primary-title {
+  font-size: 90px;
+  color: white;
+  margin: 10px 0px;
+  font-weight: 400;
+}
+.primary-button {
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  background: linear-gradient(45deg,#1c93ff, #13e045);
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  font-weight:800;
+  letter-spacing: 1px;
+}
+.primary-button:hover {
+  background: linear-gradient(45deg,  #13e045,#1c93ff );
+}
+.secondary-button {
+  color: rgb(121,119,119);
+  background: rgb(255,255,255);
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: solid 2px rgb(121,119,119);
+  margin: 6px;
+}
+.secondary-button:hover {
+  color: rgb(48,48,48);
+  border: solid 2px rgb(48,48,48);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*-----Navbar------*/
+nav {
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .nav-button {
+  color: #1c93ff;
+  background-color: white;
+  font-size: 20px;
+  padding: 7px 25px;
+  border-radius: 4px;
+  border: none;
+  margin: 5px 20px;
+  font-weight: bold;
+}
+nav .nav-button:disabled {
+  background-color: rgb(181, 180, 180);
+  color: rgb(16, 96, 171);
+}
+
+nav .logo-container {
+  width: 120px;
+  margin: 10px;
+}
+
+nav .logo-container .logo{
+  width: 100%;
+}
+
+/*-----Home Page------*/
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: linear-gradient(
+  to bottom,
+  rgba(0,0,0,0.65) 0%,
+  rgba(0, 0, 0, 0) 100%),
+  url('images/land-lake-chicago-mural.jpg');
+}
+.home {
+  margin-top: 20vh;
+}
+/*--------AuthModal--------*/
+.auth-modal {
+  top: 70px;
+  left: 0;
+  right: 0;
+  position:absolute;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 360px;
+  height: 1000px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.auth-modal .close-icon {
+  float: right;
+}
+
+.auth-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-modal form label{
+  margin: 10px 0;
+}
+
+.auth-modal form .multiple-input-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.auth-modal .identity-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.auth-modal form .multiple-input-container input {
+  margin-right: 10px;
+}
+
+.auth-modal form .multiple-input-container label {
+  padding: 10px;
+  border: solid 2px rgb(144,144,144);
+  border-radius: 10px;
+  transition: all 0.3s;
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 100px;
+}
+.auth-modal form input[type='radio'] {
+  display: none;
+}
+
+.auth-model .identity-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.identity-form-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.auth-modal form input[type='radio'] + label {
   color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  font-weight:800;
+  letter-spacing: 1px;
 }
 
-.App-link {
-  color: #61dafb;
+.auth-modal form input[type='radio']:checked + label {
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  box-shadow: rgba(195, 195, 195, 0.09) 0px -23px 25px 0px inset, rgba(195, 195, 195, 0.11) 0px -36px 30px 0px inset, rgba(195, 195, 195, 0.05) 0px -79px 40px 0px inset, rgba(195, 195, 195, 0.02) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  background: linear-gradient(45deg, #1c93ff, #13e045);
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.auth-modal input[type=email],
+.auth-modal input[type=password]
+{
+  padding: 8px;
+  margin: 8px;
+  font-size: 17px
 }
