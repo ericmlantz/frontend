@@ -3,7 +3,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 //Component/Page Imports
 import Home from './pages/Home'
-import Onboarding from './pages/Onboarding'
+import OnboardingUser from './pages/OnboardingUser'
+import OnboardingRest from './pages/OnboardingRest'
 import Dashboard from './pages/Dashboard'
 
 //API Imports
@@ -14,7 +15,8 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/onboarding' element={<Onboarding/>}/>
+      <Route path='/onboarding/user' element={<OnboardingUser/>}/>
+      <Route path='/onboarding/rest' element={<OnboardingRest/>}/>
       <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
     </BrowserRouter>

@@ -7,9 +7,8 @@ const Home = () => {
     //States
   const [showModal, setShowModal] = useState(false)
   const [isSignUp, setIsSignUp] = useState(true)
-  const [identity, setIdentity] = useState({
-    user_type: 'Person',
-  })
+  const [identity, setIdentity] = useState({user_type: 'Person'})
+
   
   //Handles
 
