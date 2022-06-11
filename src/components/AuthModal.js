@@ -10,8 +10,8 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
   const [password, setPassword] = useState(null)
   const [confirmPassword, setConfirmPassword] = useState(null)
   const [error, setError] = useState(null)
-  const [cookies, setCookie, removeCookie] = useCookies(identity='Person' ? ['user'] : ['restaurant']);
-
+  const [cookies, setCookie, removeCookie] = useCookies([identity]);
+  
   //Uses
   const navigate = useNavigate()
 
@@ -27,6 +27,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
       ...prevState,
       [name]: value
     }))
+    console.log(identity)
   }
 
   const handlePersonSubmit = async (e) => {
