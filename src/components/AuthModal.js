@@ -45,7 +45,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
       const success = response.status === 201
     
       if(success && isSignUp) {
-        navigate('/onboardinguser')
+        navigate('/user/onboarding')
       }
       if(success && !isSignUp) {
         navigate('/dashboard')
@@ -76,7 +76,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
       const success = response.status === 201
     
       if(success && isSignUp) {
-        navigate('/onboardingrest')
+        navigate('/rest/onboarding')
       }
       if(success && !isSignUp) {
         navigate('/dashboard')
