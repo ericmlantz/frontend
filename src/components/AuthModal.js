@@ -37,7 +37,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
         setError('Passwords need to match!')
         return
       }
-      const response = await axios.post(`http://localhost:8000/signup/${isSignUp ? "user" : 'login'}`, {email, password})
+      const response = await axios.post(`http://localhost:8000/user/${isSignUp ? "signup" : 'login'}`, {email, password})
       
       setCookie('UserId', response.data.userId)
       setCookie('AuthToken', response.data.token)
@@ -48,7 +48,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
         navigate('/user/onboarding')
       }
       if(success && !isSignUp) {
-        navigate('/dashboard')
+        navigate('/user/dashboard')
       }
     
       console.log('Make a person POST request to the database')
@@ -66,9 +66,8 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
         setError('Passwords need to match!')
         return
       }
-      const response = await axios.post(`http://localhost:8000/signup/${isSignUp ? "restaurant" : "login"}`, {email, password})
-      
-      console.log('signup', response)
+      console.log(identity.user_type)
+      const response = await axios.post(`http://localhost:8000/restaurant/${isSignUp ? "signup" : "login"}`, {email, password})
 
       setCookie('RestaurantId', response.data.restaurantId)
       setCookie('AuthToken', response.data.token)
@@ -79,11 +78,9 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
         navigate('/rest/onboarding')
       }
       if(success && !isSignUp) {
-        navigate('/dashboard')
+        navigate('/rest/dashboard')
       }
-    
       console.log('Make a restaurant POST request to the database')
-
     } catch (error) {
       console.log(error)
     }
