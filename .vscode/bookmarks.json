@@ -1,0 +1,14 @@
+{
+	"files": [
+		{
+			"path": "src/App.js",
+			"bookmarks": [
+				{
+					"line": 20,
+					"column": 6,
+					"label": "Fix: Could not get '{auth token &&' to work here to make the page only usable once logged in"
+				}
+			]
+		}
+	]
+}
