@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route path='/' element={<Home/>}/>
-      {cookies.AuthToken && <Route path='/user/onboarding' element={<UserOnboarding/>}/>}
+      <Route path='/user/onboarding' element={<UserOnboarding/>}/>
       <Route path='/rest/onboarding' element={<RestOnboarding/>}/>
       <Route path='/user/dashboard' element={<UserDashboard/>}/>
       <Route path='/rest/dashboard' element={<RestDashboard/>}/>
