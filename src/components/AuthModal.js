@@ -41,7 +41,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
       
       setCookie('UserId', response.data.userId)
       setCookie('AuthToken', response.data.token)
-    
+
       const success = response.status === 201
     
       if(success && isSignUp) {
@@ -50,6 +50,8 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
       if(success && !isSignUp) {
         navigate('/user/dashboard')
       }
+
+      window.location.reload()
     
       console.log('Make a person POST request to the database')
 
@@ -69,7 +71,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
       console.log(identity.user_type)
       const response = await axios.post(`http://localhost:8000/restaurant/${isSignUp ? "signup" : "login"}`, {email, password})
 
-      setCookie('RestaurantId', response.data.restaurantId)
+      setCookie('RestId', response.data.restId)
       setCookie('AuthToken', response.data.token)
     
       const success = response.status === 201
@@ -80,6 +82,9 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
       if(success && !isSignUp) {
         navigate('/rest/dashboard')
       }
+
+      window.location.reload()
+      
       console.log('Make a restaurant POST request to the database')
     } catch (error) {
       console.log(error)

@@ -409,8 +409,8 @@ align-items: center;
 }
 
 .img-container {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   overflow: hidden;
   margin: 10px;
 }
@@ -419,6 +419,10 @@ align-items: center;
   width: 100%;
 }
 
+.profile-icon {
+  width: 100%;
+  height: auto;
+}
 /*----Chat Display---- */
 .chat-display {
   padding: 20px;

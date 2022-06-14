@@ -7,9 +7,9 @@ import axios from 'axios'
 const RestOnboarding = () => {
 
 //States
-  const [cookies, setCookie, removeCookie] = useCookies(['restaurant']);
+  const [cookies, setCookie, removeCookie] = useCookies(['rest']);
   const [restaurantFormData, setRestaurantFormData] = useState({
-    rest_id: cookies.rest_id,
+    rest_id: cookies.RestId,
     rest_name: '',
     rest_logo: '',
     rest_photo1: '',
@@ -21,7 +21,7 @@ const RestOnboarding = () => {
     rest_apt: '',
     rest_city: '',
     rest_state: '',
-    rest_zipcode: '',
+    zipcode: '',
     matches: [],
   })
 
@@ -74,12 +74,11 @@ const handleSubmit = async (e) => {
               />
               <label htmlFor="rest_logo">Upload Logo</label>
               <input
-                type="file"
+                type="text"
                 id="rest_logo"
                 name="rest_logo"
                 required={true}
                 value={restaurantFormData.rest_logo}
-                multiple
                 onChange={handleChange}
               />
               <label htmlFor="rest_description">Description</label>
@@ -168,11 +167,11 @@ const handleSubmit = async (e) => {
                 />
                 <input
                   type="text"
-                  id="rest_zipcode"
-                  name="rest_zipcode"
+                  id="zipcode"
+                  name="zipcode"
                   placeholder="12345"
                   required={true}
-                  value={restaurantFormData.rest_zipcode}
+                  value={restaurantFormData.zipcode}
                   onChange={handleChange}
                 />
               </div>

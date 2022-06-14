@@ -15,14 +15,16 @@ function App() {
 
   const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
+  const authToken = cookies.AuthToken
+
   return (
     <BrowserRouter>
       <Routes>
       <Route path='/' element={<Home/>}/>
-      {cookies.AuthToken && <Route path='/user/onboarding' element={<UserOnboarding/>}/>}
-      <Route path='/rest/onboarding' element={<RestOnboarding/>}/>
-      <Route path='/user/dashboard' element={<UserDashboard/>}/>
-      <Route path='/rest/dashboard' element={<RestDashboard/>}/>
+      {authToken && <Route path='/user/onboarding' element={<UserOnboarding/>}/>}
+      {authToken && <Route path='/rest/onboarding' element={<RestOnboarding/>}/>}
+      {authToken && <Route path='/user/dashboard' element={<UserDashboard/>}/>}
+      {authToken && <Route path='/rest/dashboard' element={<RestDashboard/>}/>}
       </Routes>
     </BrowserRouter>
   );
