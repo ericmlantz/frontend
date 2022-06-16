@@ -200,7 +200,7 @@ const UserDashboard = () => {
             key={zipcodeRestaurant.rest_id}
             onSwipe={(dir) => swiped(dir, zipcodeRestaurant.rest_id)} 
             onCardLeftScreen={() => outOfFrame(zipcodeRestaurant.rest_name)}>
-            <div 
+            <div
               style={{ backgroundImage: 'url(' + zipcodeRestaurant.rest_logo + ')' }}
               className='card'>
               <h3>{zipcodeRestaurant.rest_name}</h3>

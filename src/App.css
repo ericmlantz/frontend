@@ -19,13 +19,15 @@ html,body {
 .primary-button {
   color: white;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 17px;
   background: linear-gradient(45deg,#1c93ff, #13e045);
   padding: 12px 30px;
   border-radius: 30px;
-  border: none;
+  border: 2px white solid;
   font-weight:800;
   letter-spacing: 1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
 }
 .primary-button:hover {
   background: linear-gradient(45deg,  #13e045,#1c93ff );
@@ -85,7 +87,7 @@ nav .logo-container .logo{
   to bottom,
   rgba(0,0,0,0.65) 0%,
   rgba(0, 0, 0, 0) 100%),
-  url('images/land-lake-chicago-mural.jpg');
+  url('images/Dinr Background Black.png');
 }
 .home {
   margin-top: 20vh;
@@ -362,7 +364,17 @@ input[name="loc_zip"] {
 .card h3 {
  margin-top: 0;
 }
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.profile-img-preview {
+  max-width: 100%;
+  height: auto;
+}
 .dashboard .swipe-info {
   position: absolute;
   bottom: 0;

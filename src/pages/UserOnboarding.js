@@ -122,7 +122,7 @@ const handleSubmit = async (e) => {
               />
               <div className="photo-container">
                 {personFormData.profile_photo && 
-                <img src={personFormData.profile_photo} alt="Profile Pic Preview"/>
+                <img className='profile-img-preview' src={personFormData.profile_photo} alt="Profile Pic Preview"/>
                 }
               </div>
             </section>
