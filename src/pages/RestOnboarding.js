@@ -112,7 +112,7 @@ const handleSubmit = async (e) => {
             </section>
             <section className='loc-section'>
               <label htmlFor="food_type">Type of Cuisine:</label>
-              <select name="food_type" id="food_type" required={true}> //NEED SOME WAY TO MAKE THIS APPEAR IN RESTAURANT DATA UPDATE
+              <select  multiple name="food_type" id="food_type" required={true}> //NEED SOME WAY TO MAKE THIS APPEAR IN RESTAURANT DATA UPDATE
                 <option value="">Select an option</option>
                 <option value="chinese">Chinese</option>
                 <option value="italian">Italian</option>

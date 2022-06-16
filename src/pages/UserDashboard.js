@@ -119,10 +119,7 @@ const UserDashboard = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['user'])
   const [lastDirection, setLastDirection] = useState()
 
-  
-  
   const userId = cookies.UserId
-
   
   const getUser = async () => {
     try {
@@ -137,7 +134,7 @@ const UserDashboard = () => {
 
   const getZipcodeRestaurants = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/zipcoderestaurants', {
+      const response = await axios.get('http://localhost:8000/zipcoderests', {
         params: {zipcode: user?.zipcode}
       })
       setZipcodeRestaurants(response.data)
@@ -145,6 +142,7 @@ const UserDashboard = () => {
       console.log(error)
     }
   }
+
 
   useEffect(() => {
     getUser()
@@ -157,9 +155,8 @@ const UserDashboard = () => {
   }, [user])
   
   const updateMatches = async (matchedRestaurantId) => {
-
     try {
-      await axios.put('http://localhost:8000/addrestmatch', {
+    await axios.put('http://localhost:8000/addrestmatch', {
       userId,
       matchedRestaurantId
     })
@@ -167,13 +164,14 @@ const UserDashboard = () => {
     } catch (error) {
       console.log(error)
     }
+
   }
 
 
-  const swiped = (direction, swipedRestaurant) => {
 
+  const swiped = (direction, swipedRestaurantId) => {
     if (direction === 'right') {
-      updateMatches(swipedRestaurant.rest_id)
+      updateMatches(swipedRestaurantId)
     }
     setLastDirection(direction)
   }
@@ -182,10 +180,12 @@ const UserDashboard = () => {
     console.log(name + ' left the screen!')
   }
 
-  const matchedRestaurantIds = user?.matches.map(({user_id}) => user_id).concat(userId)
+  const matchedRestaurantIds = user?.matches.map(({rest_id}) => rest_id).concat(userId)
 
   const filteredZipcodeRestaurants = zipcodeRestaurants?.filter(zipcodeRestaurant => !matchedRestaurantIds.includes(zipcodeRestaurant.rest_id))
 
+  console.log(filteredZipcodeRestaurants, 'filteredZipcodeRestaurants')
+  console.log(user,'user')
   return (
     <>
     {user &&
@@ -195,13 +195,16 @@ const UserDashboard = () => {
         <div className='card-container'>
           
           {filteredZipcodeRestaurants?.map((zipcodeRestaurant) =>
-            <TinderCard className='swipe'
-            key={zipcodeRestaurant.rest_id} 
+            <TinderCard
+            className='swipe'
+            key={zipcodeRestaurant.rest_id}
             onSwipe={(dir) => swiped(dir, zipcodeRestaurant.rest_id)} 
             onCardLeftScreen={() => outOfFrame(zipcodeRestaurant.rest_name)}>
-              <div style={{ backgroundImage: 'url(' + zipcodeRestaurant.rest_logo + ')' }} className='card'>
+            <div 
+              style={{ backgroundImage: 'url(' + zipcodeRestaurant.rest_logo + ')' }}
+              className='card'>
               <h3>{zipcodeRestaurant.rest_name}</h3>
-              </div>
+            </div>
             </TinderCard>
           )}
           <div className='swipe-info'>
