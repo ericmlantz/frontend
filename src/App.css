@@ -326,7 +326,10 @@ input[name="loc_state"] {
 input[name="loc_zip"] {
   grid-area: zip;
 }
-
+.profile-img-preview {
+  max-width: 100%;
+  height: auto;
+}
 /*--------Dashboard----------*/
 .dashboard {
   display: flex;
@@ -350,19 +353,36 @@ input[name="loc_zip"] {
   width: 400px;
   height: 650px;
 }
-
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   background-color: #fff;
   width: 400px;
   height: 650px;
   box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
   border-radius: 30px;
-  background-size: cover;
-  background-position: center;
+  line-height: 1;
+}
+.card div {
+  margin: 5px;
 }
 
 .card h3 {
- margin-top: 0;
+  margin-top: 0;
+  font-size: 3rem;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+.card .card-img-wrapper {
+  max-width: 80%;
+  height: 300px;
+}
+.card .card-img {
+  margin: 10px;
+  width: 100%;
+  height: auto;
 }
 .photo-container {
   display: flex;
@@ -370,17 +390,54 @@ input[name="loc_zip"] {
   align-items: center;
   justify-content: center;
 }
-
-.profile-img-preview {
-  max-width: 100%;
-  height: auto;
-}
 .dashboard .swipe-info {
-  position: absolute;
+  position: relative;
   bottom: 0;
-  padding: 10px;
+}
+.card .card-location {
+  line-height: .5;
+}
+.card .card-divider{
+  width: 380px;
+  height: 1px;
+  background: #dcdcdc;
+  margin: 10px;
+}
+.card .rest-description {
+  height: fit-content;
+  padding: 5px;
+  max-height: 15%;
+  overflow: scroll;
 }
 
+.card .card-contact-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.card .card-contact-item {
+  margin:   10px 5px;
+}
+.card .separator-line {
+  width: 1px;
+  background: #DCDCDCFF;
+  border: none;
+  margin: 0px 5px;
+  height: 30px;
+}
+.card .card-contact-info .card-button {
+  color: black;
+  text-transform: uppercase;
+  font-size: 12px;
+  background: linear-gradient(45deg, #1c93ff, #13e045);
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border: none;
+}
 /*----Chat Container---*/
 
 .chat-container {

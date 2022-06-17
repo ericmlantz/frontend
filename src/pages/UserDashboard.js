@@ -201,16 +201,36 @@ const UserDashboard = () => {
             onSwipe={(dir) => swiped(dir, zipcodeRestaurant.rest_id)} 
             onCardLeftScreen={() => outOfFrame(zipcodeRestaurant.rest_name)}>
             <div
-              style={{ backgroundImage: 'url(' + zipcodeRestaurant.rest_logo + ')' }}
-              className='card'>
+            className='card'>
+              <div className='card-img-wrapper'>
+                <img className='card-img' src={zipcodeRestaurant.rest_logo} alt={zipcodeRestaurant.rest_name + ' Logo'}/>
+              </div>
+              <div className='card-text'>
               <h3>{zipcodeRestaurant.rest_name}</h3>
+              <div className='card-location'>
+                <p>{zipcodeRestaurant.rest_street}</p>
+                {zipcodeRestaurant.rest_apt && <p>{zipcodeRestaurant.rest_apt}</p>}
+              <p>{`${zipcodeRestaurant.rest_city}, ${zipcodeRestaurant.rest_state} ${zipcodeRestaurant.zipcode}`}</p>
+              </div>
+                <div className='card-divider'></div>
+              <div className='rest-description'>
+                {zipcodeRestaurant.rest_description}
+              </div>
+              <div className='card-divider'></div>
+              <div className='card-contact-info'>
+                {zipcodeRestaurant.rest_phone && <p className='card-contact-item'>{zipcodeRestaurant.rest_phone}</p>}
+                <hr className='separator-line' />
+                {zipcodeRestaurant.rest_phone && <p className='card-contact-item'>{zipcodeRestaurant.food_type}</p>}
+                <hr className='separator-line' />
+                {zipcodeRestaurant.rest_url && <button className='card-contact-item card-button' onClick={()=>window.open( zipcodeRestaurant.rest_url,'_blank')}>Website</button>}
+              </div>
+              </div>
             </div>
+              <div className='swipe-info'>
+                {lastDirection ? <p>You swiped {lastDirection}</p> : <p/>}
+              </div>
             </TinderCard>
           )}
-          <div className='swipe-info'>
-            {lastDirection ? <p>You swiped {lastDirection}</p> : <p/>}
-          </div>
-
         </div>
       </div>
     </div> }

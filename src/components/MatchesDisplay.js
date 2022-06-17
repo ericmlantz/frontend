@@ -15,7 +15,6 @@ const MatchesDisplay = ({matches,setClickedRest}) => {
       const response = await axios.get("http://localhost:8000/rests", {
         params: { restIds: JSON.stringify(matchedRestIds) },
       });
-      console.log(response, 'response')
       setMatchedProfiles(response.data);
     } catch (error) {
       console.log(error);
@@ -25,13 +24,13 @@ const MatchesDisplay = ({matches,setClickedRest}) => {
   useEffect(() => {
     getMatches()
   }, [matches])
-  
+
   console.log(matchedProfiles, 'matched')
 
   return (
     <div className='matches_display'>
       {matchedProfiles?.map((match, _index) => (
-        <div key={{_index}} className='match-card' onClick={() => setClickedRest((match))}>
+        <div key={_index} className='match-card' onClick={() => setClickedRest((match))}>
           <div className='img-container'>
             <img className='profile-icon' src={match?.rest_logo} alt={match?.rest_name + ' profile'}/>
           </div>
