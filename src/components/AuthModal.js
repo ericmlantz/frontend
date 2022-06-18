@@ -30,7 +30,6 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
   }
 
   const handlePersonSubmit = async (e) => {
-    console.log(identity.user_type)
     e.preventDefault()
     try {
       if (isSignUp && (password !== confirmPassword) && (identity.user_type='Person')) {
@@ -61,14 +60,12 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
   }
 
   const handleRestaurantSubmit = async (e) => {
-    console.log(identity.user_type)
     e.preventDefault()
     try {
       if (isSignUp && (password !== confirmPassword) && (identity.user_type='Restaurant')) {
         setError('Passwords need to match!')
         return
       }
-      console.log(identity.user_type)
       const response = await axios.post(`http://localhost:8000/restaurant/${isSignUp ? "signup" : "login"}`, {email, password})
 
       setCookie('RestId', response.data.restId)

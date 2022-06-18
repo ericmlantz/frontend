@@ -4,8 +4,6 @@ import ChatInput from "./ChatInput"
 import {useState, useEffect} from "react"
 
 const ChatDisplay = ({user, clickedRest}) => {
-
-  console.log(user.userId)
   const userId = user?.user_id
   const clickedRestId = clickedRest?.rest_id
   const [userMessages, setUserMessages] = useState(null)
@@ -42,7 +40,6 @@ const ChatDisplay = ({user, clickedRest}) => {
 
   const messages = []
 
-  console.log(user, "chat-user")
   userMessages?.forEach(message => {
     const formattedMessage = {}
     formattedMessage['name'] = user?.first_name
@@ -61,13 +58,11 @@ const ChatDisplay = ({user, clickedRest}) => {
     messages.push(formattedMessage)
   })
 
-  console.log(messages, 'messages')
-
   const descendingOrderMessages = messages.sort((a,b) => a.timestamp.localeCompare(b.timestamp))
   return (
     <>
-      <Chat descendingOrderMessages={descendingOrderMessages}/>
-      <ChatInput/>
+      <Chat descendingOrderMessages={descendingOrderMessages} user={user}/>
+      <ChatInput user={user} clickedRest={clickedRest} getUserMessages={getUserMessages} getClickedRestMessages={getClickedRestMessages}/>
     </>
   )
 }

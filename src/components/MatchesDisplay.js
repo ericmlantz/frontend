@@ -7,7 +7,6 @@ const MatchesDisplay = ({matches,setClickedRest}) => {
   const [cookies, setCookie, removeCookie] = useCookies(null)
 
   const matchedRestIds = matches.map(({rest_id}) => rest_id)
-  console.log(matchedRestIds, 'my user matches')
   const userId = cookies.UserId
 
   const getMatches = async () => {
@@ -25,7 +24,6 @@ const MatchesDisplay = ({matches,setClickedRest}) => {
     getMatches()
   }, [matches])
 
-  console.log(matchedProfiles, 'matched')
 
   return (
     <div className='matches_display'>

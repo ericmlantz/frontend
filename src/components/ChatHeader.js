@@ -1,14 +1,17 @@
 import { useCookies } from "react-cookie"
+import { useNavigate } from "react-router-dom";
 
 const ChatHeader = ({user}) => {
   
   const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
-  const handleLogout = async () => {
-    removeCookie('UserId', cookies.UserId)   //WILL NEED TO DO TERENARY FOR THIS FOR RESTAURANT LOGGED IN VERSUS USER
-    removeCookie('AuthToken', cookies.AuthToken)
+  const navigate = useNavigate()
 
-    window.location.reload()
+  const handleLogout = () => {
+    removeCookie('UserId',{path:'/'});//WILL NEED TO DO TERENARY FOR THIS FOR RESTAURANT LOGGED IN VERSUS USER
+    removeCookie('AuthToken',{path:'/'});
+    navigate('/')
+    window.location.reload();
   }
   return (
     <div className="chat-container-header">

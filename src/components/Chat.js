@@ -1,14 +1,9 @@
-const Chat = ({descendingOrderMessages}) => {
+const Chat = ({descendingOrderMessages, user}) => {
   return (
-
     <div className='chat-display'>
       {descendingOrderMessages.map((message, _index) => (
-        <div key={_index}>
+        <div className={message.name===user.first_name ? 'blue message-card' : 'green message-card'} key={_index}>
           <div className='chat-message-header'>
-            <div className='img-container'>
-              <img src={message.img} alt={message.name + ' profile'}/>
-            </div>
-            <p>{message.name}</p>
           </div>
           <p>{message.message}</p>
         </div>

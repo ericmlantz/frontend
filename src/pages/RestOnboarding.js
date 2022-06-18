@@ -46,8 +46,8 @@ const handleSubmit = async (e) => {
     const response = await axios.put('http://localhost:8000/rest', {restaurantFormData})
     const success = response.status === 200
     if (success) navigate('/rest/dashboard')
-  } catch (err) {
-    console.log(err)
+  } catch (error) {
+    console.log(error)
   }
 }
 
