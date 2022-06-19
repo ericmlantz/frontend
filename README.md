@@ -41,7 +41,7 @@ The project itself was deployed and can be viewed [here.](https://rhubarb-cupcak
 <a id="screenshots"></a>
 
 #### **Preview Video**
-
+https://user-images.githubusercontent.com/77892536/174488472-5e323df6-95c1-4858-bb2c-09eb1b711856.mp4
 
 ***
 <a id="updates"></a>
