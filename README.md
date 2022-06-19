@@ -1,4 +1,4 @@
-# Dinr
+# Dinr - Frontend
 ### By: Eric Lantz
 
 Week of March 28th, 2022
