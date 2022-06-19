@@ -35,7 +35,7 @@ Portfolio Project 2: A matching, swipe profile-style application for restaurant-
 ***
 <a id="started"></a>
 ### ***Getting Started***
-A Trello board was used to keep track of development progress and can be viewed [here.](https://trello.com/b/5U6UzkUP/dinr)
+The backend of this project can be found [here.](https://github.com/ericmlantz/backend/)
 
 The project itself was deployed and can be viewed [here.](https://rhubarb-cupcake-82292.herokuapp.com/)
 ***
