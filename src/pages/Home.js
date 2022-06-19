@@ -27,6 +27,7 @@ const Home = () => {
       <Nav minimal={false} setShowModal={setShowModal} showModal={showModal} setIsSignUp={setIsSignUp} />
       <div className="home">
         <h1 className='primary-title'>Dinr</h1>
+        <h2 className='slogan'>Find Hot Plates in Your Area!</h2>
         <button className='primary-button'
         onClick={handleClick}>
           {authToken ? 'Signout' : 'Create Account'}
