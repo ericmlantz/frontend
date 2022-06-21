@@ -1,4 +1,4 @@
-# Dinr
+# Dinr - Frontend
 ### By: Eric Lantz
 
 Week of March 28th, 2022
@@ -29,11 +29,13 @@ Portfolio Project 2: A matching, swipe profile-style application for restaurant-
 * HTML
 * CSS
 * Github
+* React-Tinder-Cards Library
+* React-Cookies Library
 
 ***
 <a id="started"></a>
 ### ***Getting Started***
-A Trello board was used to keep track of development progress and can be viewed [here.](https://trello.com/b/5U6UzkUP/dinr)
+The backend of this project can be found [here.](https://github.com/ericmlantz/backend/)
 
 The project itself was deployed and can be viewed [here.](https://rhubarb-cupcake-82292.herokuapp.com/)
 ***
@@ -41,12 +43,14 @@ The project itself was deployed and can be viewed [here.](https://rhubarb-cupcak
 <a id="screenshots"></a>
 
 #### **Preview Video**
-
+https://user-images.githubusercontent.com/77892536/174488472-5e323df6-95c1-4858-bb2c-09eb1b711856.mp4
 
 ***
 <a id="updates"></a>
 ### ***Future Updates***
-- [ ] Additional Feature Idea
+- [ ] Let restaurants send birthday rewards/offers based on birthday added on profile creation. 
+- [ ] Only show bars/clubs to users that are over 21 based on birthday in profile.
+- [ ] Ability to crop images on upload to match needed size.
 - [x] ~~ER Diagram and Component Hierarchy Diagram Created~~ 
 - [x] ~~Created Development Trello~~
 
@@ -55,3 +59,6 @@ The project itself was deployed and can be viewed [here.](https://rhubarb-cupcak
 ### ***Credits***
 <a id="credits"></a>
 * Markdown Cheatsheet: [Github](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#lists)
+* Video for reference of Tinder Clone: [Code with Ania Kubów](https://www.youtube.com/watch?v=Q70IMS-Qnjk)
+* Reat Tinder Cards: [React Library](https://www.npmjs.com/package/react-tinder-card)
+* React Cookies: [React Library](https://www.npmjs.com/package/react-cookie)
