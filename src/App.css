@@ -13,9 +13,20 @@ html,body {
 .primary-title {
   font-size: 90px;
   color: white;
-  margin: 10px 0px;
+  margin: 10px 0px 0px 0px;
   font-weight: 400;
+  text-shadow: 2px 2px 4px #777777;
 }
+
+.slogan {
+  font-style: italic;
+  font-size: 35px;
+  color: white;
+  margin: 0px 0px 20px 0px;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px #777777;
+}
+
 .primary-button {
   color: white;
   text-transform: uppercase;
@@ -503,6 +514,26 @@ align-items: center;
   height: 60vh;
   overflow-y: auto;
 }
+.matches_display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.match-card {
+  font-size: 14px;
+  text-align: center;
+  width: 40%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 10px;
+  margin: 10px 10px;
+}
 .chat-input {
   padding: 20px;
   display: flex;
@@ -519,7 +550,7 @@ align-items: center;
 }
 .message-card {
   font-size: 1rem;
-  padding: 1px 10px;
+  padding: 0px 10px;
   border-radius: 10px;
   font-weight: bold;
   letter-spacing: 1px;

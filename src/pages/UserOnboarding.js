@@ -38,7 +38,7 @@ const UserOnboarding = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put('http://localhost:8000/user', {personFormData})
+      const response = await axios.put('https://secret-bastion-87382.herokuapp.com/user', {personFormData})
       const success = response.status === 200
       if (success) navigate('/user/dashboard')
     } catch (error) {
