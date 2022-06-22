@@ -2,6 +2,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import { useCookies } from 'react-cookie'
 import { useState } from 'react'
+import { BACKEND } from "../globals";
 
 const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
 
@@ -36,7 +37,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
         setError('Passwords need to match!')
         return
       }
-      const response = await axios.post(`http://localhost:8000/user/${isSignUp ? "signup" : 'login'}`, {email, password})
+      const response = await axios.post(`${BACKEND}/user/${isSignUp ? "signup" : 'login'}`, {email, password})
       
       setCookie('UserId', response.data.userId)
       setCookie('AuthToken', response.data.token)
@@ -66,7 +67,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
         setError('Passwords need to match!')
         return
       }
-      const response = await axios.post(`http://localhost:8000/restaurant/${isSignUp ? "signup" : "login"}`, {email, password})
+      const response = await axios.post(`${BACKEND}/restaurant/${isSignUp ? "signup" : "login"}`, {email, password})
 
       setCookie('RestId', response.data.restId)
       setCookie('AuthToken', response.data.token)

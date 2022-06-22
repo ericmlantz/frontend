@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { useCookies } from "react-cookie"
+import { BACKEND } from "../globals"
 
 const MatchesDisplay = ({matches,setClickedRest}) => {
   const [matchedProfiles, setMatchedProfiles] = useState(null)
@@ -11,7 +12,7 @@ const MatchesDisplay = ({matches,setClickedRest}) => {
 
   const getMatches = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/rests", {
+      const response = await axios.get(`${BACKEND}/rests`, {
         params: { restIds: JSON.stringify(matchedRestIds) },
       });
       setMatchedProfiles(response.data);

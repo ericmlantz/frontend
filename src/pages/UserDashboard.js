@@ -111,6 +111,7 @@ import {useCookies} from "react-cookie"
 import {useEffect, useState} from 'react'
 import TinderCard from 'react-tinder-card'
 import ChatContainer from '../components/ChatContainer'
+import { BACKEND } from '../globals'
 
 const UserDashboard = () => {
   const [user, setUser] = useState(null)
@@ -122,7 +123,7 @@ const UserDashboard = () => {
 
   const getUser = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/user', {
+      const response = await axios.get(`${BACKEND}/user`, {
         params: {userId}
       })
       setUser(response.data)
@@ -133,7 +134,7 @@ const UserDashboard = () => {
 
   const getZipcodeRestaurants = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/zipcoderests', {
+      const response = await axios.get(`${BACKEND}/zipcoderests`, {
         params: {zipcode: user?.zipcode}
       })
       setZipcodeRestaurants(response.data)
