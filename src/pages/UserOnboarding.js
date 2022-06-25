@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import {useCookies} from 'react-cookie'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import { BACKEND } from "../globals";
 
 const UserOnboarding = () => {
 
@@ -38,7 +39,7 @@ const UserOnboarding = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put('https://secret-bastion-87382.herokuapp.com/user', {personFormData})
+      const response = await axios.put(`${BACKEND}/user`, {personFormData})
       const success = response.status === 200
       if (success) navigate('/user/dashboard')
     } catch (error) {

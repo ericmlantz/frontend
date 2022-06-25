@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import {useCookies} from 'react-cookie'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import { BACKEND } from "../globals";
 
 const RestOnboarding = () => {
 
@@ -43,7 +44,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await axios.put('http://localhost:8000/rest', {restaurantFormData})
+    const response = await axios.put(`${BACKEND}/rest`, {restaurantFormData})
     const success = response.status === 200
     if (success) navigate('/rest/dashboard')
   } catch (error) {

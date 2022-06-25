@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from "axios";
-
+import { BACKEND } from "../globals";
 
 const ChatInput = ({user, clickedRest, getUserMessages, getClickedRestMessages}) => {
   const [textArea, setTextArea] = useState('')
@@ -15,7 +15,7 @@ const ChatInput = ({user, clickedRest, getUserMessages, getClickedRestMessages})
       message: textArea
     }
     try {
-      await axios.post('http://localhost:8000/message', {message})
+      await axios.post(`${BACKEND}message`, {message})
       getUserMessages()
       getClickedRestMessages()
       setTextArea("")

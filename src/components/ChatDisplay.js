@@ -2,6 +2,7 @@ import axios from "axios"
 import Chat from "./Chat"
 import ChatInput from "./ChatInput"
 import {useState, useEffect} from "react"
+import { BACKEND } from "../globals"
 
 const ChatDisplay = ({user, clickedRest}) => {
   const userId = user?.user_id
@@ -12,7 +13,7 @@ const ChatDisplay = ({user, clickedRest}) => {
   const getUserMessages = async () => {
     try {
 
-      const response = await axios.get('http://localhost:8000/messages', {
+      const response = await axios.get(`${BACKEND}messages`, {
         params: {userId: userId, correspondingRestId: clickedRestId}
       })
       setUserMessages(response.data)
