@@ -50,7 +50,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
         navigate('/user/dashboard')
       }
 
-      // window.location.reload()
+      window.location.reload()
     
       console.log('Make a person POST request to the database')
 
