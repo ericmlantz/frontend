@@ -15,7 +15,7 @@ const ChatInput = ({user, clickedRest, getUserMessages, getClickedRestMessages})
       message: textArea
     }
     try {
-      await axios.post('http://localhost:8000/message', {message})
+      await axios.post('https://mydinr.herokuapp.com/message', {message})
       getUserMessages()
       getClickedRestMessages()
       setTextArea("")

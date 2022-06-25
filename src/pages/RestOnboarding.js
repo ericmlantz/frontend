@@ -43,7 +43,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await axios.put('http://localhost:8000/rest', {restaurantFormData})
+    const response = await axios.put('https://mydinr.herokuapp.com/rest', {restaurantFormData})
     const success = response.status === 200
     if (success) navigate('/rest/dashboard')
   } catch (error) {

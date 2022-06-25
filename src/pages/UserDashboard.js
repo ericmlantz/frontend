@@ -122,7 +122,7 @@ const UserDashboard = () => {
 
   const getUser = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/user', {
+      const response = await axios.get('https://mydinr.herokuapp.com/user', {
         params: {userId}
       })
       setUser(response.data)
@@ -133,7 +133,7 @@ const UserDashboard = () => {
 
   const getZipcodeRestaurants = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/zipcoderests', {
+      const response = await axios.get('https://mydinr.herokuapp.com/zipcoderests', {
         params: {zipcode: user?.zipcode}
       })
       setZipcodeRestaurants(response.data)
@@ -155,7 +155,7 @@ const UserDashboard = () => {
 
   const updateMatches = async (matchedRestaurantId) => {
     try {
-      await axios.put('http://localhost:8000/addrestmatch', {
+      await axios.put('https://mydinr.herokuapp.com/addrestmatch', {
         userId,
         matchedRestaurantId
       })
