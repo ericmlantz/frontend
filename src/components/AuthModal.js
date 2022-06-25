@@ -66,7 +66,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
         setError('Passwords need to match!')
         return
       }
-      const response = await axios.post(`http://localhost:8000/restaurant/${isSignUp ? "signup" : "login"}`, {email, password})
+      const response = await axios.post(`https://mydinr.herokuapp.com/restaurant/${isSignUp ? "signup" : "login"}`, {email, password})
 
       setCookie('RestId', response.data.restId)
       setCookie('AuthToken', response.data.token)
