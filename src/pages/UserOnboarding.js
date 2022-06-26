@@ -114,7 +114,7 @@ const UserOnboarding = () => {
             />
           </section>
           <section>
-            <label htmlFor="profile_photo">Profile Photo</label>
+            <label htmlFor="profile_photo">Profile Photo: Use a link to a photo</label>
             <input
               type="url"
               name="profile_photo"
