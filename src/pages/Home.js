@@ -19,7 +19,7 @@ const Home = () => {
 
   //Other
   const authToken = false
-  const minimal = false
+  const minimal = true
   
 
   return (

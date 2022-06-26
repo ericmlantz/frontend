@@ -27,7 +27,7 @@ const MatchesDisplay = ({matches,setClickedRest}) => {
 
 
   return (
-    <div className='matches_display'>
+    <div className='matches-display'>
       {matchedProfiles?.map((match, _index) => (
         <div key={_index} className='match-card' onClick={() => setClickedRest((match))}>
           <div className='img-container'>

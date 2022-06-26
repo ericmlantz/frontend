@@ -9,9 +9,9 @@ const ChatContainer = ({user}) => {
     <div className='chat-container'>
       <ChatHeader user={user}/>
 
-      <div>
-        <button className='option' onClick={() => setClickedRest(null)}>Matches</button>
-        <button className='option' disabled={!clickedRest}>Chat</button>
+      <div className='chatting-with-who'>
+        {!clickedRest && <button className='option' onClick={() => setClickedRest(null)}>Matches</button>}
+        { clickedRest && <button className='matches-title' onClick={() => setClickedRest(null)}>← Back To Matches</button>}
       </div>
 
       {!clickedRest && <MatchesDisplay matches={user.matches} setClickedRest={setClickedRest}/>}
