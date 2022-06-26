@@ -16,7 +16,7 @@ const UserDashboard = () => {
 
   const getUser = async () => {
     try {
-      const response = await axios.get('https://mydinr.herokuapp.com/user', {
+      const response = await axios.get(`${BACKEND}/user`, {
         params: {userId}
       })
       setUser(response.data)
