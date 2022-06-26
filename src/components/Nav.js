@@ -1,6 +1,3 @@
-import whiteLogo from '../images/DinrLogo+Text-White.png'
-import colorLogo from '../images/DinrLogo+Text-Colored.png'
-
 
 const Nav = ({minimal,setShowModal, showModal, setIsSignUp}) => {
 
@@ -13,7 +10,7 @@ const Nav = ({minimal,setShowModal, showModal, setIsSignUp}) => {
   return (
     <nav>
       <div className='logo-container'>
-        <img className='logo' src={minimal ? colorLogo : whiteLogo}/>
+        <img className='logo'src={minimal ? 'https://i.imgur.com/WN90kOd.png' : 'https://i.imgur.com/4WGd5VH.png'}/>
       </div>
       {!authToken && !minimal &&
         <button
