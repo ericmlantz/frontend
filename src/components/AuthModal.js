@@ -7,9 +7,9 @@ import { BACKEND } from "../globals";
 const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
 
   //States
-  const [email, setEmail] = useState(null)
-  const [password, setPassword] = useState(null)
-  const [confirmPassword, setConfirmPassword] = useState(null)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState(null)
   const [cookies, setCookie, removeCookie] = useCookies([identity.user_type])
 
@@ -37,7 +37,11 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
         setError('Passwords need to match!')
         return
       }
+<<<<<<< HEAD
       const response = await axios.post(`${BACKEND}/user/${isSignUp ? "signup" : 'login'}`, {email, password})
+=======
+      const response = await axios.post(`https://mydinr.herokuapp.com/user/${isSignUp ? "signup" : 'login'}`, {email, password})
+>>>>>>> ab7d805f24a150dc35322b53fd50d2e0b8bdd9bd
       
       setCookie('UserId', response.data.userId)
       setCookie('AuthToken', response.data.token)
@@ -67,7 +71,11 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
         setError('Passwords need to match!')
         return
       }
+<<<<<<< HEAD
       const response = await axios.post(`${BACKEND}/restaurant/${isSignUp ? "signup" : "login"}`, {email, password})
+=======
+      const response = await axios.post(`https://mydinr.herokuapp.com/restaurant/${isSignUp ? "signup" : "login"}`, {email, password})
+>>>>>>> ab7d805f24a150dc35322b53fd50d2e0b8bdd9bd
 
       setCookie('RestId', response.data.restId)
       setCookie('AuthToken', response.data.token)

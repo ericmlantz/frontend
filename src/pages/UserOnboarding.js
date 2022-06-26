@@ -39,7 +39,7 @@ const UserOnboarding = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`${BACKEND}/user`, {personFormData})
+      const response = await axios.put('https://mydinr.herokuapp.com/user', {personFormData})
       const success = response.status === 200
       if (success) navigate('/user/dashboard')
     } catch (error) {
