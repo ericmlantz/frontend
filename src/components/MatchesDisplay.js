@@ -12,11 +12,7 @@ const MatchesDisplay = ({matches,setClickedRest}) => {
 
   const getMatches = async () => {
     try {
-<<<<<<< HEAD
       const response = await axios.get(`${BACKEND}/rests`, {
-=======
-      const response = await axios.get("https://mydinr.herokuapp.com/rests", {
->>>>>>> ab7d805f24a150dc35322b53fd50d2e0b8bdd9bd
         params: { restIds: JSON.stringify(matchedRestIds) },
       });
       setMatchedProfiles(response.data);

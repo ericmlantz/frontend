@@ -13,11 +13,7 @@ const ChatDisplay = ({user, clickedRest}) => {
   const getUserMessages = async () => {
     try {
 
-<<<<<<< HEAD
       const response = await axios.get(`${BACKEND}messages`, {
-=======
-      const response = await axios.get('https://mydinr.herokuapp.com/messages', {
->>>>>>> ab7d805f24a150dc35322b53fd50d2e0b8bdd9bd
         params: {userId: userId, correspondingRestId: clickedRestId}
       })
       setUserMessages(response.data)
