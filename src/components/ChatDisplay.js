@@ -13,7 +13,7 @@ const ChatDisplay = ({user, clickedRest}) => {
   const getUserMessages = async () => {
     try {
 
-      const response = await axios.get(`${BACKEND}messages`, {
+      const response = await axios.get(`${BACKEND}/messages`, {
         params: {userId: userId, correspondingRestId: clickedRestId}
       })
       setUserMessages(response.data)
@@ -25,7 +25,7 @@ const ChatDisplay = ({user, clickedRest}) => {
   const getClickedRestMessages = async () => {
     try {
 
-      const response = await axios.get('https://mydinr.herokuapp.com/messages', {
+      const response = await axios.get(`${BACKEND}/messages`, {
         params: {restId: clickedRestId, correspondingUserId: userId}
       })
       setClickedRestMessages(response.data)
