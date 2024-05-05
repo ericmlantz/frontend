@@ -1,1 +1,1 @@
-export const BACKEND = 'https://mydinr.herokuapp.com'
+export const BACKEND = 'https://main.d2u179one24ba8.amplifyapp.com'
