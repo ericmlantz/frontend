@@ -38,5 +38,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.0.0",
+    "@aws-amplify/backend-cli": "^1.0.1",
+    "aws-cdk": "^2.141.0",
+    "aws-cdk-lib": "^2.141.0",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.21.1",
+    "tsx": "^4.9.3",
+    "typescript": "^5.4.5"
   }
 }
