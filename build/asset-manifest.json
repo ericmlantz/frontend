@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.7da15c50.css",
-    "main.js": "/static/js/main.d95fad74.js",
+    "main.js": "/static/js/main.1fd0755d.js",
     "static/media/Dinr Background Black.png": "/static/media/Dinr Background Black.a6b65fbfd6b484bc8fc8.png",
     "static/media/drop-down-arrow-android-11550097306hqmewqalfj.png": "/static/media/drop-down-arrow-android-11550097306hqmewqalfj.70b3a6ecf70bca1786b0.png",
     "index.html": "/index.html",
     "main.7da15c50.css.map": "/static/css/main.7da15c50.css.map",
-    "main.d95fad74.js.map": "/static/js/main.d95fad74.js.map"
+    "main.1fd0755d.js.map": "/static/js/main.1fd0755d.js.map"
   },
   "entrypoints": [
     "static/css/main.7da15c50.css",
-    "static/js/main.d95fad74.js"
+    "static/js/main.1fd0755d.js"
   ]
 }
