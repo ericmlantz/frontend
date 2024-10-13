@@ -16,7 +16,7 @@ const UserOnboarding = () => {
     dob_day: '',
     dob_month: '',
     dob_year: '',
-    zipcode: '',
+    zipcode: 30004,
     profile_photo: '',
     matches: []
   })

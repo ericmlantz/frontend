@@ -120,7 +120,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
               checked={identity.user_type === 'Person'}
             />
             <label htmlFor="person_identity">Person</label>
-            <input
+            {/* <input
               type="radio"
               id="restaurant_identity"
               name="user_type"
@@ -128,7 +128,7 @@ const AuthModal = ({setShowModal, isSignUp, identity, setIdentity}) => {
               onChange={handleIdentityChange}
               checked={identity.user_type === 'Restaurant'}
             />
-            <label htmlFor="restaurant_identity">Restaurant</label>
+            <label htmlFor="restaurant_identity">Restaurant</label> */}
           </div>
         </form>
 
